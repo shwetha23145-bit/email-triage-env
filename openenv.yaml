@@ -1,13 +1,13 @@
+spec_version: 1
 name: email-triage-env
-description: AI environment for classifying emails
-version: 1.0
-
-observation_space:
-  email_text: string
-
-action_space:
-  category: string
-  priority: string
-  action: string
-
-reward: 0.0 to 1.0
+type: space
+runtime: fastapi
+app: server.app:app
+port: 7860
+tasks:
+  - id: email-classification
+    grader: grader.py
+  - id: urgency-detection
+    grader: grader.py
+  - id: spam-filtering
+    grader: grader.py
