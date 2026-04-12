@@ -1,6 +1,0 @@
-openai
-httpx
-fastapi
-uvicorn
-torch
-pydantic
